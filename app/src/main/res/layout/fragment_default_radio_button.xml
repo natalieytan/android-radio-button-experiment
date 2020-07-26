@@ -19,26 +19,30 @@
 
         <RadioButton
             android:id="@+id/radioButtonBlack"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/AppTheme.VanillaRadioButton"
             android:text="@string/black" />
 
         <RadioButton
             android:id="@+id/radioButtonRed"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/AppTheme.VanillaRadioButton"
             android:text="@string/red" />
 
         <RadioButton
             android:id="@+id/radioButtonBlue"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/AppTheme.VanillaRadioButton"
             android:text="@string/blue" />
 
         <RadioButton
             android:id="@+id/radioButtonGreen"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/AppTheme.VanillaRadioButton"
             android:text="@string/green" />
     </RadioGroup>
 
