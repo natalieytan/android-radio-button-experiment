@@ -11,4 +11,12 @@
     <string name="menu_styled_default_radio_button">Styled Default Radio Button</string>
     <string name="menu_custom_radio_button">Custom Radio Button</string>
     <string name="menu_custom_radio_group">Custom Radio Group</string>
+
+    <string name="black">Black</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+
+    <string name="apply">Apply</string>
+
 </resources>

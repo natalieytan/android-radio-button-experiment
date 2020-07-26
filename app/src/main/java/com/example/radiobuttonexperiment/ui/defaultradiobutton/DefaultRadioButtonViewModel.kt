@@ -3,11 +3,18 @@ package com.example.radiobuttonexperiment.ui.defaultradiobutton
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.radiobuttonexperiment.models.Color
 
 class DefaultRadioButtonViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "Default radio button fragment"
+    private val _selectedColor = MutableLiveData<Color>().apply {
+        value = Color.BLACK
     }
-    val text: LiveData<String> = _text
+    val selectedColor: LiveData<Color>
+        get() = _selectedColor
+
+    fun displayString(): String { return "Selected color is ${selectedColor.value!!.colorName}" }
+
+    fun setSelectedColor(color: Color) {
+        _selectedColor.value = color
+    }
 }
