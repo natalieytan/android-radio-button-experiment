@@ -8,6 +8,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_default_radio_button">Default Radio Button</string>
+    <string name="menu_styled_default_radio_button">Styled Default Radio Button</string>
     <string name="menu_custom_radio_button">Custom Radio Button</string>
     <string name="menu_custom_radio_group">Custom Radio Group</string>
 </resources>

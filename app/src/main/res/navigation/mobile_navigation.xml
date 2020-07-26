@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_default_radio_button" />
 
     <fragment
+        android:id="@+id/nav_styled_default_radio_button"
+        android:name="com.example.radiobuttonexperiment.ui.styleddefaultradiobutton.StyledDefaultRadioButtonFragment"
+        android:label="@string/menu_styled_default_radio_button"
+        tools:layout="@layout/fragment_styled_default_radio_button" />
+
+    <fragment
         android:id="@+id/nav_custom_radio_button"
         android:name="com.example.radiobuttonexperiment.ui.customradiobutton.CustomRadioButtonFragment"
         android:label="@string/menu_custom_radio_button"

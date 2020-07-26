@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.nav_default_radio_button, R.id.nav_custom_radio_button, R.id.nav_custom_radio_group), drawerLayout)
+                R.id.nav_default_radio_button, R.id.nav_styled_default_radio_button, R.id.nav_custom_radio_button, R.id.nav_custom_radio_group), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

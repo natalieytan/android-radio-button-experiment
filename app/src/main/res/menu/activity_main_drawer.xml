@@ -9,12 +9,16 @@
             android:icon="@drawable/ic_baseline_looks_one_24"
             android:title="@string/menu_default_radio_button" />
         <item
-            android:id="@+id/nav_custom_radio_button"
+            android:id="@+id/nav_styled_default_radio_button"
             android:icon="@drawable/ic_baseline_looks_two_24"
+            android:title="@string/menu_styled_default_radio_button" />
+        <item
+            android:id="@+id/nav_custom_radio_button"
+            android:icon="@drawable/ic_baseline_looks_three_24"
             android:title="@string/menu_custom_radio_button" />
         <item
             android:id="@+id/nav_custom_radio_group"
-            android:icon="@drawable/ic_baseline_looks_three_24"
+            android:icon="@drawable/ic_baseline_looks_four_24"
             android:title="@string/menu_custom_radio_group" />
     </group>
 </menu>

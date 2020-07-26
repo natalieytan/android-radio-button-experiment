@@ -2,6 +2,7 @@
     <item name="ic_baseline_looks_one_24" type="drawable">@drawable/ic_baseline_looks_one_24</item>
     <item name="ic_baseline_looks_two_24" type="drawable">@drawable/ic_baseline_looks_two_24</item>
     <item name="ic_baseline_looks_three_24" type="drawable">@drawable/ic_baseline_looks_three_24</item>
+    <item name="ic_baseline_looks_four_24" type="drawable">@drawable/ic_baseline_looks_four_24</item>
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
     <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
     <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
