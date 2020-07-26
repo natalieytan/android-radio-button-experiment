@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.defaultradiobutton.DefaultRadioButtonFragment">
+    tools:context=".ui.styledradiobutton.StyledRadioButtonFragment">
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/radioGroupColors"
@@ -21,28 +21,28 @@
             android:id="@+id/radioButtonBlack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.VanillaRadioButton"
+            style="@style/AppTheme.StyledRadioButton"
             android:text="@string/black" />
 
         <RadioButton
             android:id="@+id/radioButtonRed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.VanillaRadioButton"
+            style="@style/AppTheme.StyledRadioButton"
             android:text="@string/red" />
 
         <RadioButton
             android:id="@+id/radioButtonBlue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.VanillaRadioButton"
+            style="@style/AppTheme.StyledRadioButton"
             android:text="@string/blue" />
 
         <RadioButton
             android:id="@+id/radioButtonGreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/AppTheme.VanillaRadioButton"
+            style="@style/AppTheme.StyledRadioButton"
             android:text="@string/green" />
     </RadioGroup>
 

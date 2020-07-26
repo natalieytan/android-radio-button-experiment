@@ -28,21 +28,7 @@
         <item name="android:ellipsize">end</item>
     </style>
 
-    <style name="AppTheme.RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
-        <item name="android:button">@null</item>
-        <item name="android:drawableEnd">@drawable/custom_radio_button</item>
-        <item name="android:drawableRight">@drawable/custom_radio_button</item>
-        <item name="android:background">?android:selectableItemBackground</item>
-        <item name="android:layout_gravity">start</item>
-        <item name="android:textAlignment" tools:ignore="NewApi">textStart</item>
-        <item name="android:paddingBottom">28dp</item>
-        <item name="android:paddingLeft">24dp</item>
-        <item name="android:paddingRight">24dp</item>
-        <item name="android:paddingTop">28dp</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="AppTheme.VanillaRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <style name="AppTheme.StyledRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
         <item name="android:button">@null</item>
         <item name="android:drawableEnd">?android:attr/listChoiceIndicatorSingle</item>
         <item name="android:drawableRight">?android:attr/listChoiceIndicatorSingle</item>
@@ -55,6 +41,11 @@
         <item name="android:paddingRight">24dp</item>
         <item name="android:paddingTop">28dp</item>
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.DrawableRadioButton" parent="AppTheme.StyledRadioButton">
+        <item name="android:drawableEnd">@drawable/custom_radio_button</item>
+        <item name="android:drawableRight">@drawable/custom_radio_button</item>
     </style>
 
 </resources>

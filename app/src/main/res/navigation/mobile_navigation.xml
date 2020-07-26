@@ -3,19 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_default_radio_button">
+    app:startDestination="@+id/nav_unstyled_radio_button">
 
     <fragment
-        android:id="@+id/nav_default_radio_button"
-        android:name="com.example.radiobuttonexperiment.ui.defaultradiobutton.DefaultRadioButtonFragment"
-        android:label="@string/menu_default_radio_button"
-        tools:layout="@layout/fragment_default_radio_button" />
+        android:id="@+id/nav_unstyled_radio_button"
+        android:name="com.example.radiobuttonexperiment.ui.styledradiobutton.UnstyledRadioButtonFragment"
+        android:label="@string/menu_unstyled_radio_button"
+        tools:layout="@layout/fragment_unstyled_radio_button" />
 
     <fragment
-        android:id="@+id/nav_styled_default_radio_button"
-        android:name="com.example.radiobuttonexperiment.ui.styleddefaultradiobutton.StyledDefaultRadioButtonFragment"
-        android:label="@string/menu_styled_default_radio_button"
-        tools:layout="@layout/fragment_styled_default_radio_button" />
+        android:id="@+id/nav_styled_radio_button"
+        android:name="com.example.radiobuttonexperiment.ui.styledradiobutton.StyledRadioButtonFragment"
+        android:label="@string/menu_styled_radio_button"
+        tools:layout="@layout/fragment_styled_radio_button" />
+
+    <fragment
+        android:id="@+id/nav_drawable_radio_button"
+        android:name="com.example.radiobuttonexperiment.ui.drawableradiobutton.DrawableRadioButtonFragment"
+        android:label="@string/menu_styled_drawable_radio_button"
+        tools:layout="@layout/fragment_drawable_radio_button" />
 
     <fragment
         android:id="@+id/nav_custom_radio_button"

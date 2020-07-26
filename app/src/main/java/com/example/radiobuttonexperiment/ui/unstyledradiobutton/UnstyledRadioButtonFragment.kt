@@ -1,4 +1,4 @@
-package com.example.radiobuttonexperiment.ui.defaultradiobutton
+package com.example.radiobuttonexperiment.ui.styledradiobutton
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,42 +11,42 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.radiobuttonexperiment.R
 import com.example.radiobuttonexperiment.models.Color
 import com.example.radiobuttonexperiment.models.resource
-import kotlinx.android.synthetic.main.fragment_default_radio_button.*
+import kotlinx.android.synthetic.main.fragment_styled_radio_button.*
 
-class DefaultRadioButtonFragment : Fragment() {
+class UnstyledRadioButtonFragment : Fragment() {
 
-    private lateinit var defaultRadioButtonViewModel: DefaultRadioButtonViewModel
+    private lateinit var unstyledRadioButtonViewModel: UnstyledRadioButtonViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        defaultRadioButtonViewModel =
-            ViewModelProviders.of(this).get(DefaultRadioButtonViewModel::class.java)
-        return inflater.inflate(R.layout.fragment_default_radio_button, container, false)
+        unstyledRadioButtonViewModel =
+            ViewModelProviders.of(this).get(UnstyledRadioButtonViewModel::class.java)
+        return inflater.inflate(R.layout.fragment_unstyled_radio_button, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonApplyColor.isEnabled = false
-        radioGroupColors.check(getRadioButtonViewId(defaultRadioButtonViewModel.selectedColor.value!!));
+        radioGroupColors.check(getRadioButtonViewId(unstyledRadioButtonViewModel.selectedColor.value!!));
 
-        defaultRadioButtonViewModel.selectedColor.observe(viewLifecycleOwner, Observer {
-            textViewInfo.text = defaultRadioButtonViewModel.displayString()
+        unstyledRadioButtonViewModel.selectedColor.observe(viewLifecycleOwner, Observer {
+            textViewInfo.text = unstyledRadioButtonViewModel.displayString()
             textViewInfo.setTextColor(ContextCompat.getColor(requireContext(), it.resource))
         })
 
         radioGroupColors.setOnCheckedChangeListener { _, selectedRadio ->
             buttonApplyColor.isEnabled = when (getColor(selectedRadio)) {
-                defaultRadioButtonViewModel.selectedColor.value!! -> false
+                unstyledRadioButtonViewModel.selectedColor.value!! -> false
                 else -> true
             }
         }
 
         buttonApplyColor.setOnClickListener {
             val chosenColor = getColor(radioGroupColors.checkedRadioButtonId)
-            defaultRadioButtonViewModel.setSelectedColor(chosenColor)
+            unstyledRadioButtonViewModel.setSelectedColor(chosenColor)
             buttonApplyColor.isEnabled = false
         }
     }
