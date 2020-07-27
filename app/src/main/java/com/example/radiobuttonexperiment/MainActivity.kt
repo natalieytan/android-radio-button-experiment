@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_unstyled_radio_button,
                 R.id.nav_styled_radio_button,
                 R.id.nav_drawable_radio_button,
+                R.id.nav_programmatic_radio_button,
                 R.id.nav_custom_radio_button,
                 R.id.nav_custom_radio_group
             ), drawerLayout

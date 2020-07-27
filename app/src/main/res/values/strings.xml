@@ -10,6 +10,7 @@
     <string name="menu_unstyled_radio_button">Unstyled Radio Button</string>
     <string name="menu_styled_radio_button">Styled Radio Button</string>
     <string name="menu_styled_drawable_radio_button">Drawable Radio Button</string>
+    <string name="menu_programmatic_radio_button">Programmatic Radio Button</string>
     <string name="menu_custom_radio_button">Custom Radio Button</string>
     <string name="menu_custom_radio_group">Custom Radio Group</string>
 
