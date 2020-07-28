@@ -17,14 +17,14 @@ import kotlinx.android.synthetic.main.fragment_programmatic_radio_button.*
 
 class ProgrammaticRadioButtonFragment : Fragment() {
 
-    private lateinit var programmaticRadioButtonViewModel: ProgramaticRadioButtonViewModel
+    private lateinit var viewModel: ProgramaticRadioButtonViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        programmaticRadioButtonViewModel =
+        viewModel =
             ViewModelProviders.of(this).get(ProgramaticRadioButtonViewModel::class.java)
         return inflater.inflate(R.layout.fragment_programmatic_radio_button, container, false)
     }
@@ -32,32 +32,35 @@ class ProgrammaticRadioButtonFragment : Fragment() {
     @SuppressLint("NewApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        programmaticRadioButtonViewModel.radioSelectionMap
+        viewModel.radioSelectionMap
             .forEach { (viewId, Color) ->
                 radioGroupColors.addView(
                     createRadioButton(Color.colorName, viewId)
                 )
             }
 
+        val selected = viewModel.radioSelectionMap.filterValues { it ==  viewModel.selectedColor.value }.keys.firstOrNull()
+        selected?.let { radioGroupColors.check(it) }
+
         buttonApplyColor.isEnabled = false
 
-        programmaticRadioButtonViewModel.selectedColor.observe(viewLifecycleOwner, Observer {
-            textViewInfo.text = programmaticRadioButtonViewModel.displayString()
+        viewModel.selectedColor.observe(viewLifecycleOwner, Observer {
+            textViewInfo.text = viewModel.displayString()
             textViewInfo.setTextColor(ContextCompat.getColor(requireContext(), it.resource))
         })
 
         radioGroupColors.setOnCheckedChangeListener { _, selectedRadio ->
             buttonApplyColor.isEnabled =
-                when (programmaticRadioButtonViewModel.valueOfRadioViewId(selectedRadio)) {
-                    programmaticRadioButtonViewModel.selectedColor.value!! -> false
+                when (viewModel.valueOfRadioViewId(selectedRadio)) {
+                    viewModel.selectedColor.value!! -> false
                     else -> true
                 }
         }
 
         buttonApplyColor.setOnClickListener {
             val chosenColor =
-                programmaticRadioButtonViewModel.valueOfRadioViewId(radioGroupColors.checkedRadioButtonId)
-            programmaticRadioButtonViewModel.setSelectedColor(chosenColor!!)
+                viewModel.valueOfRadioViewId(radioGroupColors.checkedRadioButtonId)
+            viewModel.setSelectedColor(chosenColor!!)
             buttonApplyColor.isEnabled = false
         }
     }
