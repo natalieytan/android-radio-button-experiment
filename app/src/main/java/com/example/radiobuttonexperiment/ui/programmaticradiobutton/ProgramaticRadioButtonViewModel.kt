@@ -8,9 +8,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.radiobuttonexperiment.models.Color
 
-class ProgramaticRadioButtonViewModel : ViewModel() {
+interface ProgrammaticRadioButtonViewModel {
+    val radioSelectionMap: Map<Int, Any?>
+    fun valueOfRadioViewId(int: Int): Any?
+}
+
+class ProgramaticRadioButtonViewModel : ProgrammaticRadioButtonViewModel, ViewModel() {
     @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    val radioSelectionMap = SELECTABLE_COLORS.map { View.generateViewId() to it }.toMap()
+    override val radioSelectionMap = SELECTABLE_COLORS.map { View.generateViewId() to it }.toMap()
+
+    override fun valueOfRadioViewId(int: Int) : Color? = radioSelectionMap[int]
 
     private val _selectedColor = MutableLiveData<Color>().apply {
         value = Color.BLACK
@@ -23,8 +30,6 @@ class ProgramaticRadioButtonViewModel : ViewModel() {
     fun setSelectedColor(color: Color) {
         _selectedColor.value = color
     }
-
-    fun colorByViewId(int: Int) : Color? = radioSelectionMap[int]
 
     companion object {
         val SELECTABLE_COLORS = listOf(

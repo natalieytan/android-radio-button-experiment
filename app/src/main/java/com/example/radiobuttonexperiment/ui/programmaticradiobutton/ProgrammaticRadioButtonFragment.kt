@@ -48,7 +48,7 @@ class ProgrammaticRadioButtonFragment : Fragment() {
 
         radioGroupColors.setOnCheckedChangeListener { _, selectedRadio ->
             buttonApplyColor.isEnabled =
-                when (programmaticRadioButtonViewModel.colorByViewId(selectedRadio)) {
+                when (programmaticRadioButtonViewModel.valueOfRadioViewId(selectedRadio)) {
                     programmaticRadioButtonViewModel.selectedColor.value!! -> false
                     else -> true
                 }
@@ -56,7 +56,7 @@ class ProgrammaticRadioButtonFragment : Fragment() {
 
         buttonApplyColor.setOnClickListener {
             val chosenColor =
-                programmaticRadioButtonViewModel.colorByViewId(radioGroupColors.checkedRadioButtonId)
+                programmaticRadioButtonViewModel.valueOfRadioViewId(radioGroupColors.checkedRadioButtonId)
             programmaticRadioButtonViewModel.setSelectedColor(chosenColor!!)
             buttonApplyColor.isEnabled = false
         }
