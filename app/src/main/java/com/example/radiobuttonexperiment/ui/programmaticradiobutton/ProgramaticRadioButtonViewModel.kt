@@ -9,15 +9,8 @@ import androidx.lifecycle.ViewModel
 import com.example.radiobuttonexperiment.models.Color
 
 class ProgramaticRadioButtonViewModel : ViewModel() {
-    val selectableColors = listOf(
-        Color.BLACK,
-        Color.RED,
-        Color.BLUE,
-        Color.GREEN
-    )
-
     @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    var colorViewIds: List<Int> = IntArray(selectableColors.size) { View.generateViewId() }.asList()
+    val radioSelectionMap = SELECTABLE_COLORS.map { View.generateViewId() to it }.toMap()
 
     private val _selectedColor = MutableLiveData<Color>().apply {
         value = Color.BLACK
@@ -31,8 +24,14 @@ class ProgramaticRadioButtonViewModel : ViewModel() {
         _selectedColor.value = color
     }
 
-    fun colorByViewId(int: Int) : Color {
-        val id = colorViewIds.indexOf(int)
-        return selectableColors.get(id)
+    fun colorByViewId(int: Int) : Color? = radioSelectionMap[int]
+
+    companion object {
+        val SELECTABLE_COLORS = listOf(
+            Color.BLACK,
+            Color.RED,
+            Color.BLUE,
+            Color.GREEN
+        )
     }
 }

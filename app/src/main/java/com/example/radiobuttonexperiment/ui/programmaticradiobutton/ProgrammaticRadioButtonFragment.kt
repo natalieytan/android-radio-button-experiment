@@ -32,10 +32,11 @@ class ProgrammaticRadioButtonFragment : Fragment() {
     @SuppressLint("NewApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        programmaticRadioButtonViewModel.selectableColors
-            .zip(programmaticRadioButtonViewModel.colorViewIds)
-            .forEach { (color, viewId) ->
-                radioGroupColors.addView(createRadioButton(color.colorName, viewId))
+        programmaticRadioButtonViewModel.radioSelectionMap
+            .forEach { (viewId, Color) ->
+                radioGroupColors.addView(
+                    createRadioButton(Color.colorName, viewId)
+                )
             }
 
         buttonApplyColor.isEnabled = false
@@ -56,7 +57,7 @@ class ProgrammaticRadioButtonFragment : Fragment() {
         buttonApplyColor.setOnClickListener {
             val chosenColor =
                 programmaticRadioButtonViewModel.colorByViewId(radioGroupColors.checkedRadioButtonId)
-            programmaticRadioButtonViewModel.setSelectedColor(chosenColor)
+            programmaticRadioButtonViewModel.setSelectedColor(chosenColor!!)
             buttonApplyColor.isEnabled = false
         }
     }
